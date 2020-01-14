@@ -2,31 +2,44 @@ import React, { useContext } from "react";
 import { EarthquakeContext } from "../contexts/EarthquakeContext";
 import DetailModal from "./DetailModal";
 
+const getCityText = place => {
+  return place
+    .split(" ")
+    .slice(-2)
+    .join("");
+};
+
 const EarthquakeDetails = ({ earthquake }) => {
   const {
-    earthquakeDetails,
-    getEarthquakeDetails,
+    earthquakeMap,
+    getEarthquakeMap,
+    setEarthquakeDetail,
     modalShow,
     setModalShow
   } = useContext(EarthquakeContext);
-  console.log("from details: ", earthquakeDetails);
+  console.log("from details: ", earthquakeMap);
   return (
-    <li>
-      <p>{earthquake.properties.mag}</p>
-      <p>{earthquake.properties.place}</p>
-      <p>{earthquake.properties.time}</p>
-      <p onClick={() => getEarthquakeDetails(earthquake.properties.detail)}>
-        {earthquake.properties.url}
-      </p>
-      <a href={earthquake.properties.url}>LINK</a>
-      <p>{earthquake.properties.detail}</p>
-      <p>{earthquake.geometry.coordinates[0]}</p>
-      <p>{earthquake.geometry.coordinates[1]}</p>
-      <p>{earthquake.geometry.coordinates[2]}</p>
+    <li className="list-item">
+      <div className="list-content">
+        <span className="list-location">
+          <i className="list-mag">{earthquake.properties.mag}</i>{" "}
+          {earthquake.properties.place}
+        </span>
+        <span className="list-time">Time: {earthquake.properties.time}</span>
+        <span
+          className="list-more"
+          onClick={() => {
+            getEarthquakeMap(getCityText(earthquake.properties.place));
+            setEarthquakeDetail(earthquake.properties);
+          }}
+        >
+          More Detail...
+        </span>
+      </div>
       <DetailModal
         show={modalShow}
-        // title={earthquakeDetails.properties.mag}
         onHide={() => setModalShow(false)}
+        img={earthquakeMap}
       />
     </li>
   );

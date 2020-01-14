@@ -1,0 +1,114 @@
+:root {
+  --background-color: #6dbddd;
+  --list-background-color: rgba(255, 255, 255, 0.466);
+  --white: #ffffffb7;
+  --secondary-text: #757575;
+  --list-text-color: #072c70;
+}
+
+body {
+  background-color: var(--background-color);
+  background-image: url("./images/app-bkgrd.jpg");
+  background-size: cover;
+}
+
+.center-content {
+  margin: 0 auto;
+  width: 60%;
+}
+
+#earthquake-list {
+  background-color: var(--list-background-color);
+  padding: 2rem;
+}
+
+#page-header {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.page-title {
+  font-family: "Alfa Slab One", cursive;
+  color: var(--white);
+  font-size: 5.5rem;
+}
+
+.page-header-text {
+  color: var(--white);
+  font-size: 2rem;
+  font-style: oblique;
+  font-family: "Didact Gothic", sans-serif;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.list-item {
+  width: 100%;
+  background-color: var(--white);
+  border-radius: 16px;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  font-size: 1.25rem;
+}
+
+.list-content {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0.5rem auto;
+  color: var(--list-text-color);
+}
+
+.list-location {
+  font-size: 1.5rem;
+}
+
+.list-mag {
+  font-weight: 700;
+  padding-right: 2rem;
+}
+
+.list-time {
+  color: var(--secondary-text);
+}
+
+.list-more {
+  cursor: pointer;
+  font-style: oblique;
+  font-size: 1.4rem;
+}
+
+.list-more:hover {
+  color: var(--background-color);
+}
+
+.quake-modal-content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.quake-modal-column {
+  flex-direction: column;
+  flex: 1;
+  padding: 0.5rem;
+}
+
+.quake-modal-column ul {
+  font-size: 1.2rem;
+  color: var(--secondary-text);
+}
+
+.quake-modal-column ul li {
+  margin-bottom: 1rem;
+}
+
+.quake-detail-bold {
+  font-weight: 700;
+}
