@@ -27,7 +27,7 @@ const DetailModal = props => {
               height="300"
             />
           </section>
-          <section className="quake-modal-column">
+          <section className="quake-modal-column-text">
             <ul>
               <li>
                 {" "}

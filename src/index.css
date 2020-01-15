@@ -116,15 +116,20 @@ li {
 .quake-modal-column {
   flex-direction: column;
   padding: 0.5rem;
+}
+
+.quake-modal-column-text {
+  flex-direction: column;
+  padding: 0.5rem;
   max-width: 90%;
 }
 
-.quake-modal-column ul {
+.quake-modal-column-text ul {
   font-size: 1.2rem;
   color: var(--secondary-text);
 }
 
-.quake-modal-column ul li {
+.quake-modal-column-text ul li {
   margin-bottom: 1rem;
 }
 
@@ -176,6 +181,20 @@ li {
 
   .page-header-text {
     font-size: 1.5rem;
+  }
+
+  .list-more {
+    flex-direction: row;
+  }
+
+  .list-time {
+    flex-direction: row;
+  }
+
+  .list-item-header {
+    text-align: left;
+    font-size: 1.1rem;
+    padding-left: 0.75rem;
   }
 }
 
