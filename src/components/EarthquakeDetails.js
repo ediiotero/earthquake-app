@@ -41,7 +41,7 @@ const EarthquakeDetails = ({ earthquake }) => {
             setEarthquakeDetail(earthquake.properties);
           }}
         >
-          More Detail...
+          Details...
         </div>
       </div>
       <DetailModal

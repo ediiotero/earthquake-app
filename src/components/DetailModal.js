@@ -55,7 +55,9 @@ const DetailModal = props => {
                   : "Not Alerts"}
               </li>
               <li>
-                <a href={earthquakeDetails.url}>More detail at USGS</a>
+                <a href={earthquakeDetails.url}>
+                  Visit the USGS site for more info
+                </a>
               </li>
             </ul>
           </section>

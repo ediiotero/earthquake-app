@@ -116,6 +116,7 @@ li {
 .quake-modal-column {
   flex-direction: column;
   padding: 0.5rem;
+  max-width: 90%;
 }
 
 .quake-modal-column ul {
