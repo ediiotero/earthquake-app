@@ -5,7 +5,6 @@ import { EarthquakeContext } from "../contexts/EarthquakeContext";
 
 const DetailModal = props => {
   const { earthquakeDetails } = useContext(EarthquakeContext);
-  console.log("from modal: ", earthquakeDetails);
   return (
     <Modal
       {...props}

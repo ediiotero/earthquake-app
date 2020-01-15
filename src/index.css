@@ -10,11 +10,7 @@ body {
   background-color: var(--background-color);
   background-image: url("./images/app-bkgrd.jpg");
   background-size: cover;
-}
-
-.center-content {
-  margin: 0 auto;
-  width: 60%;
+  background-position: center;
 }
 
 #earthquake-list {
@@ -23,21 +19,26 @@ body {
 }
 
 #page-header {
+  padding-top: 3.5rem;
+  color: var(--white);
   text-align: center;
-  margin-top: 3rem;
 }
 
 .page-title {
   font-family: "Alfa Slab One", cursive;
-  color: var(--white);
   font-size: 5.5rem;
+  text-align: center;
 }
 
 .page-header-text {
-  color: var(--white);
   font-size: 2rem;
   font-style: oblique;
   font-family: "Didact Gothic", sans-serif;
+}
+
+.center-content {
+  margin: 0 auto;
+  width: 60%;
 }
 
 ul {
@@ -52,9 +53,16 @@ li {
   width: 100%;
   background-color: var(--white);
   border-radius: 16px;
-  padding: 0.5rem 1rem;
+  padding-bottom: 0.5rem;
   margin: 1rem 0;
   font-size: 1.25rem;
+}
+
+.list-item-header {
+  width: 100%;
+  background-color: #6dbddd;
+  text-align: center;
+  padding: 0.5rem;
 }
 
 .list-content {
@@ -63,6 +71,7 @@ li {
   width: 90%;
   margin: 0.5rem auto;
   color: var(--list-text-color);
+  flex-wrap: wrap;
 }
 
 .list-location {
@@ -71,17 +80,25 @@ li {
 
 .list-mag {
   font-weight: 700;
-  padding-right: 2rem;
+}
+
+.location-name {
+  font-weight: 700;
+  font-style: oblique;
 }
 
 .list-time {
   color: var(--secondary-text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .list-more {
   cursor: pointer;
   font-style: oblique;
   font-size: 1.4rem;
+  display: flex;
 }
 
 .list-more:hover {
@@ -92,11 +109,12 @@ li {
   width: 100%;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .quake-modal-column {
   flex-direction: column;
-  flex: 1;
   padding: 0.5rem;
 }
 
@@ -111,4 +129,61 @@ li {
 
 .quake-detail-bold {
   font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+  .center-content {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .location-name {
+    display: block;
+  }
+
+  .center-content {
+    width: 95%;
+  }
+
+  .page-title {
+    font-size: 4rem;
+  }
+
+  .list-time {
+    font-size: 1rem;
+  }
+
+  .quake-modal-column {
+    flex: none;
+  }
+
+  .quake-modal-content {
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  #earthquake-list {
+    background-color: transparent;
+    padding: 0.5rem;
+  }
+
+  .page-title {
+    font-size: 2.5rem;
+  }
+
+  .page-header-text {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .quake-modal-column img {
+    max-width: 90%;
+  }
+
+  .quake-modal-column ul li {
+    font-size: 1rem;
+  }
 }

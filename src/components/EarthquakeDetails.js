@@ -2,12 +2,13 @@ import React, { useContext } from "react";
 import { EarthquakeContext } from "../contexts/EarthquakeContext";
 import DetailModal from "./DetailModal";
 
-const getCityText = place => {
-  return place
+const getCityText = place =>
+  place
     .split(" ")
     .slice(-2)
     .join("");
-};
+
+const convertTime = timeStamp => new Date(timeStamp).toLocaleString();
 
 const EarthquakeDetails = ({ earthquake }) => {
   const {
@@ -17,16 +18,23 @@ const EarthquakeDetails = ({ earthquake }) => {
     modalShow,
     setModalShow
   } = useContext(EarthquakeContext);
-  console.log("from details: ", earthquakeMap);
   return (
     <li className="list-item">
+      <div className="list-item-header">
+        Location:
+        <span className="location-name"> {earthquake.properties.place}</span>
+      </div>
       <div className="list-content">
         <span className="list-location">
-          <i className="list-mag">{earthquake.properties.mag}</i>{" "}
-          {earthquake.properties.place}
+          <div>
+            Magnitude:{" "}
+            <span className="list-mag">{earthquake.properties.mag}</span>
+          </div>
         </span>
-        <span className="list-time">Time: {earthquake.properties.time}</span>
-        <span
+        <div className="list-time">
+          Time: {convertTime(earthquake.properties.time)}
+        </div>
+        <div
           className="list-more"
           onClick={() => {
             getEarthquakeMap(getCityText(earthquake.properties.place));
@@ -34,7 +42,7 @@ const EarthquakeDetails = ({ earthquake }) => {
           }}
         >
           More Detail...
-        </span>
+        </div>
       </div>
       <DetailModal
         show={modalShow}

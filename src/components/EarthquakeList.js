@@ -4,17 +4,22 @@ import EarthquakeDetails from "./EarthquakeDetails";
 
 const EarthquakeList = () => {
   const { earthquakes } = useContext(EarthquakeContext);
-  console.log("list: ", earthquakes);
   return earthquakes.length ? (
     <div>
       <ul>
         {earthquakes.map(quake => {
-          return <EarthquakeDetails earthquake={quake} key={quake.id} />;
+          return (
+            <EarthquakeDetails
+              earthquake={quake}
+              key={quake.id}
+              data-testId="quakeList"
+            />
+          );
         })}
       </ul>
     </div>
   ) : (
-    <p>No data</p>
+    <p>...Loading Data</p>
   );
 };
 
