@@ -11,7 +11,6 @@ const EarthquakeContextProvider = props => {
     "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/1.0_hour.geojson";
 
   const getEarthquakeMap = place => {
-    setEarthquakeMap([]);
     const mapKey = process.env.REACT_APP_MAPQUEST_KEY;
     const url = `https://open.mapquestapi.com/staticmap/v5/map?key=${mapKey}&center=${place}&size=@2x`;
     fetch(url)
