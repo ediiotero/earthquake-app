@@ -30,7 +30,7 @@ const mockQuake = [
 
 afterEach(cleanup);
 
-test("render details", () => {
+test("render earthquake details", () => {
   const earthquakes = mockQuake;
   const earthquakeDetails = mockQuake[0];
   const list = (

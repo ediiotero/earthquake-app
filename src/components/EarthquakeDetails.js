@@ -19,7 +19,7 @@ const EarthquakeDetails = ({ earthquake }) => {
     setModalShow
   } = useContext(EarthquakeContext);
   return (
-    <li className="list-item">
+    <li className="list-item animated fadeInUp">
       <div className="list-item-header">
         Location:
         <span className="location-name"> {earthquake.properties.place}</span>
