@@ -185,10 +185,7 @@ li {
 
   .list-more {
     flex-direction: row;
-  }
-
-  .list-time {
-    flex-direction: row;
+    font-size: 1.2rem;
   }
 
   .list-item-header {
